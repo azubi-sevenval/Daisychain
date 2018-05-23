@@ -25,29 +25,19 @@ namespace FlowerFieldApp
         /// <summary>
         /// Gets the count of contained elements of the collection.
         /// </summary>
-        public int Count {
-			get {
-				return 0;
-			}
-		}
+        public int Count { get { throw new NotImplementedException("please implement missing code here"); } }
 
         /// <summary>
         /// Inserts an element containing the given value after the current element.
         /// If the collection is empty or the iterarion is reset a new first element is being inserted.
         /// </summary>
         /// <param name="value"></param>
-        public void Insert(T value) {
-			if (first == null) {
-				first = new Daisy<T> (value,current);
-			} else {
-				current = new Daisy<T> (value);
-			}
-		}
+        public void Insert(T value) { Daisy<T> daisy = new Daisy<T>(value); }
 
         /// <summary>
         /// Removes the current element of the collection and makes the next element the current element if available.
         /// </summary>
-		public void Remove() { current = null; }
+        public void Remove() { throw new NotImplementedException("please implement missing code here"); }
 
         /// <summary>
         /// Gets the value of the element in the collection at the current position of the iteration.
@@ -59,16 +49,13 @@ namespace FlowerFieldApp
         /// Gets the value of the element in the collection at the current position of the iteration.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-        public object Current {
-			get {
-				return current;
-			}
-		}
+        public object Current { get { { throw new NotImplementedException("please implement missing code here"); } } }
+
         /// <summary>
         /// Sets the iteration to its initial position, which is just before the first element.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-		public void Reset() { current = first; }
+        public void Reset() { throw new NotImplementedException("please implement missing code here"); }
 
         /// <summary>
         /// Advances the iteration to the next element of the collection starting from current.
@@ -76,13 +63,7 @@ namespace FlowerFieldApp
         /// </summary>
         /// <returns>true if the iteration was successfully advanced to the next element;
         /// false if the iteration has passed the end of the collection.</returns>
-		public bool MoveNext() {
-			if (current.Next != null) {
-				current = current.Next;
-				return true;
-			}
-			return false;
-		}
+        public bool MoveNext() { throw new NotImplementedException("please implement missing code here"); }
 
         /// <summary>
         /// Returns this as enumerator.
@@ -96,14 +77,14 @@ namespace FlowerFieldApp
         /// The element is structured recursively to build the collection.
         /// </summary>
         /// <typeparam name="T">Value type</typeparam>
-        private class Daisy<U>
+        private class Daisy<T>
         {
             /// <summary>
             /// Constructs a new collection element
             /// </summary>
             /// <param name="value">Value of the collections element</param>
             /// <param name="next">Next element of the collection or 'null' at last element</param>
-            public Daisy(U value, Daisy<U> next = null) {
+            public Daisy(T value, Daisy<T> next = null) {
                 this.Value = value;
                 this.Next = next;
             }
@@ -111,12 +92,12 @@ namespace FlowerFieldApp
             /// <summary>
             /// Value of the collections element
             /// </summary>
-            public readonly U Value;
+            public readonly T Value;
 
             /// <summary>
             /// Next element of the collection or 'null' at last element
             /// </summary>
-            public Daisy<U> Next;
+            public Daisy<T> Next;
         }
     }
 }

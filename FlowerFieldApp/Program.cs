@@ -13,6 +13,7 @@ namespace FlowerFieldApp
             // demonstrate the usage of IEnumerator (and IEnumerator<T>)
             //
 
+<<<<<<< HEAD
 //            // array
 //            int[] a = { 100, 200, 300 };
 //            ShowCollection(a);
@@ -27,6 +28,22 @@ namespace FlowerFieldApp
 //            Customer c1 = new Customer("Hugo", "Hiller");
 //            Customer c2 = new Customer("Helga", "Hermsdorf");
 //            Customer c3 = new Customer("Holger", "Hollein");
+=======
+            // array
+            int[] a = { 100, 200, 300 };
+            ShowCollection(a);
+
+            // List<string>
+            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            ShowCollection(b);
+
+            //
+            // demonstrate the usage of DasyChain
+            //
+            Customer c1 = new Customer("Hugo", "Hiller");
+            Customer c2 = new Customer("Helga", "Hermsdorf");
+            Customer c3 = new Customer("Holger", "Hollein");
+>>>>>>> master
 
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
