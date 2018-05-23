@@ -13,17 +13,17 @@ namespace FlowerFieldApp
             // demonstrate the usage of IEnumerator (and IEnumerator<T>)
             //
 
-//            // array
-//            int[] a = { 100, 200, 300 };
-//            ShowCollection(a);
-//
-//            // List<string>
-//            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-//            ShowCollection(b);
-//
-//            //
-//            // demonstrate the usage of DasyChain
-//            //
+            // array
+            int[] a = { 100, 200, 300 };
+            ShowCollection(a);
+
+            // List<string>
+            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            ShowCollection(b);
+
+            //
+            // demonstrate the usage of DasyChain
+            //
             Customer c1 = new Customer("Hugo", "Hiller");
             Customer c2 = new Customer("Helga", "Hermsdorf");
             Customer c3 = new Customer("Holger", "Hollein");
