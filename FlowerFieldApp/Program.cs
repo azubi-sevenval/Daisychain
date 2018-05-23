@@ -24,9 +24,9 @@ namespace FlowerFieldApp
 //            //
 //            // demonstrate the usage of DasyChain
 //            //
-            Customer c1 = new Customer("Hugo", "Hiller");
-            Customer c2 = new Customer("Helga", "Hermsdorf");
-            Customer c3 = new Customer("Holger", "Hollein");
+//            Customer c1 = new Customer("Hugo", "Hiller");
+//            Customer c2 = new Customer("Helga", "Hermsdorf");
+//            Customer c3 = new Customer("Holger", "Hollein");
 
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
