@@ -4,3 +4,9 @@
 /home/florian/Downloads/FlowerFieldApp/FlowerFieldApp/bin/Debug/FlowerFieldApp.exe
 /home/florian/Downloads/FlowerFieldApp/FlowerFieldApp/obj/Debug/FlowerFieldApp.exe
 /home/florian/Downloads/FlowerFieldApp/FlowerFieldApp/obj/Debug/FlowerFieldApp.exe.mdb
+/home/florian/Projekte/Daisychain/FlowerFieldApp/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/florian/Projekte/Daisychain/FlowerFieldApp/bin/Debug/FlowerFieldApp.exe.config
+/home/florian/Projekte/Daisychain/FlowerFieldApp/bin/Debug/FlowerFieldApp.exe.mdb
+/home/florian/Projekte/Daisychain/FlowerFieldApp/bin/Debug/FlowerFieldApp.exe
+/home/florian/Projekte/Daisychain/FlowerFieldApp/obj/Debug/FlowerFieldApp.exe
+/home/florian/Projekte/Daisychain/FlowerFieldApp/obj/Debug/FlowerFieldApp.exe.mdb

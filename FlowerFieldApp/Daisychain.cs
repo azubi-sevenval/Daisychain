@@ -32,7 +32,16 @@ namespace FlowerFieldApp
         /// If the collection is empty or the iterarion is reset a new first element is being inserted.
         /// </summary>
         /// <param name="value"></param>
-        public void Insert(T value) { Daisy<T> daisy = new Daisy<T>(value); }
+        public void Insert(T value) {
+			if (first == null) {
+				first = new Daisy<T> (value, current);
+			} else if (current == null) {
+				current = new Daisy<T> (value, current.Next);
+			} else {
+				current.Next = new Daisy<T> (value, current.Next);
+				MoveNext ();
+			}
+		}
 
         /// <summary>
         /// Removes the current element of the collection and makes the next element the current element if available.
@@ -63,7 +72,9 @@ namespace FlowerFieldApp
         /// </summary>
         /// <returns>true if the iteration was successfully advanced to the next element;
         /// false if the iteration has passed the end of the collection.</returns>
-        public bool MoveNext() { throw new NotImplementedException("please implement missing code here"); }
+        public bool MoveNext() {
+			return this.MoveNext ();
+		}
 
         /// <summary>
         /// Returns this as enumerator.
@@ -77,14 +88,14 @@ namespace FlowerFieldApp
         /// The element is structured recursively to build the collection.
         /// </summary>
         /// <typeparam name="T">Value type</typeparam>
-        private class Daisy<T>
+        private class Daisy<U>
         {
             /// <summary>
             /// Constructs a new collection element
             /// </summary>
             /// <param name="value">Value of the collections element</param>
             /// <param name="next">Next element of the collection or 'null' at last element</param>
-            public Daisy(T value, Daisy<T> next = null) {
+            public Daisy(U value, Daisy<U> next = null) {
                 this.Value = value;
                 this.Next = next;
             }
@@ -92,12 +103,12 @@ namespace FlowerFieldApp
             /// <summary>
             /// Value of the collections element
             /// </summary>
-            public readonly T Value;
+            public readonly U Value;
 
             /// <summary>
             /// Next element of the collection or 'null' at last element
             /// </summary>
-            public Daisy<T> Next;
+            public Daisy<U> Next;
         }
     }
 }
