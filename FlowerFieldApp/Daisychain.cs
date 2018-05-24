@@ -4,14 +4,12 @@
 using System;
 using System.Collections;
 
-namespace FlowerFieldApp
-{
+namespace FlowerFieldApp {
     /// <summary>
     /// Collection of chained values which can be iterated in one direction
     /// </summary>
     /// <typeparam name="T">Value type</typeparam>
-    public class Daisychain<T> : IEnumerable, IEnumerator
-    {
+    public class Daisychain<T> : IEnumerable, IEnumerator {
         /// <summary>
         /// First element of the collection to start iterations from
         /// </summary>
@@ -25,7 +23,11 @@ namespace FlowerFieldApp
         /// <summary>
         /// Gets the count of contained elements of the collection.
         /// </summary>
-        public int Count { get { throw new NotImplementedException("please implement missing code here"); } }
+        public int Count {
+			get {
+				throw new NotImplementedException("please implement missing code here");
+			}
+		}
 
         /// <summary>
         /// Inserts an element containing the given value after the current element.
@@ -46,7 +48,9 @@ namespace FlowerFieldApp
         /// <summary>
         /// Removes the current element of the collection and makes the next element the current element if available.
         /// </summary>
-        public void Remove() { throw new NotImplementedException("please implement missing code here"); }
+        public void Remove() {
+			this.current = null;
+		}
 
         /// <summary>
         /// Gets the value of the element in the collection at the current position of the iteration.
@@ -58,13 +62,19 @@ namespace FlowerFieldApp
         /// Gets the value of the element in the collection at the current position of the iteration.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-        public object Current { get { { throw new NotImplementedException("please implement missing code here"); } } }
+        public object Current {
+			get {
+				throw new NotImplementedException("please implement missing code here");
+			}
+		}
 
         /// <summary>
         /// Sets the iteration to its initial position, which is just before the first element.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-        public void Reset() { throw new NotImplementedException("please implement missing code here"); }
+        public void Reset() {
+			throw new NotImplementedException("please implement missing code here");
+		}
 
         /// <summary>
         /// Advances the iteration to the next element of the collection starting from current.
