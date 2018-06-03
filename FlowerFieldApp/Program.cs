@@ -27,12 +27,11 @@ namespace FlowerFieldApp
             Customer c1 = new Customer("Hugo", "Hiller");
             Customer c2 = new Customer("Helga", "Hermsdorf");
             Customer c3 = new Customer("Holger", "Hollein");
-
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
-                c.Insert(c3);
-                c.Insert(c2);
                 c.Insert(c1);
+                c.Insert(c2);
+                c.Insert(c3);
                 ShowCollection(c);
             } catch {
                 Console.WriteLine("\nDaisychain is not successfully implemented!!!");
