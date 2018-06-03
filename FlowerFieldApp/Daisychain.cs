@@ -6,38 +6,56 @@ using System.Collections;
 
 namespace FlowerFieldApp
 {
-    /// <summary>
-    /// Collection of chained values which can be iterated in one direction
-    /// </summary>
-    /// <typeparam name="T">Value type</typeparam>
     public class Daisychain<T> : IEnumerable, IEnumerator
     {
-        /// <summary>
-        /// First element of the collection to start iterations from
-        /// </summary>
+        private class Daisy<T>
+        {
+            public readonly T Value;
+            public Daisy<T> Next;
+
+            public Daisy(T value, Daisy<T> next = null)
+            {
+                this.Value = value;
+                this.Next = next;
+            }
+        }
+
         private Daisy<T> first = null;
-
-        /// <summary>
-        /// Current element of the iteration
-        /// </summary>
         private Daisy<T> current = null;
+        public int count;
 
-        /// <summary>
-        /// Gets the count of contained elements of the collection.
-        /// </summary>
-        public int Count { get { throw new NotImplementedException("please implement missing code here"); } }
+        // Methodendeklaration
+        public void Insert(T value)
+        {
+            Daisy<T> daisy = new Daisy<T>(value);
+            if (first == null)
+            {
+                first = daisy;
+                current = first;
+                Console.WriteLine(first.Value);
+            }
+            else
+            {
+                if(current.Next == null)
+                {
+                    current.Next = daisy;
+                    current = daisy;
+                    Console.WriteLine(current.Value);
+                }
+            }
+            count++;
+        }
 
-        /// <summary>
-        /// Inserts an element containing the given value after the current element.
-        /// If the collection is empty or the iterarion is reset a new first element is being inserted.
-        /// </summary>
-        /// <param name="value"></param>
-        public void Insert(T value) { Daisy<T> daisy = new Daisy<T>(value); }
+        public int Count() { return this.count; }
 
-        /// <summary>
-        /// Removes the current element of the collection and makes the next element the current element if available.
-        /// </summary>
-        public void Remove() { throw new NotImplementedException("please implement missing code here"); }
+        // <summary>
+        // Removes the current element of the collection and makes the next element the current element if available.
+        // </summary>
+        public void Remove()
+        {
+            // current = null;
+            // count--
+        }
 
         /// <summary>
         /// Gets the value of the element in the collection at the current position of the iteration.
@@ -49,7 +67,7 @@ namespace FlowerFieldApp
         /// Gets the value of the element in the collection at the current position of the iteration.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-        public object Current { get { { throw new NotImplementedException("please implement missing code here"); } } }
+        public object Current { get { return this.current; } }
 
         /// <summary>
         /// Sets the iteration to its initial position, which is just before the first element.
@@ -63,41 +81,15 @@ namespace FlowerFieldApp
         /// </summary>
         /// <returns>true if the iteration was successfully advanced to the next element;
         /// false if the iteration has passed the end of the collection.</returns>
-        public bool MoveNext() { throw new NotImplementedException("please implement missing code here"); }
-
+        public bool MoveNext()
+        {
+            return current != null ? true : false;
+        }
         /// <summary>
         /// Returns this as enumerator.
         /// Implementation of the IEnumerable-interface.
         /// </summary>
         /// <returns></returns>
         public IEnumerator GetEnumerator() { Reset(); return this; }
-
-        /// <summary>
-        /// Daisychained element of the collection containing the listed value.
-        /// The element is structured recursively to build the collection.
-        /// </summary>
-        /// <typeparam name="T">Value type</typeparam>
-        private class Daisy<T>
-        {
-            /// <summary>
-            /// Constructs a new collection element
-            /// </summary>
-            /// <param name="value">Value of the collections element</param>
-            /// <param name="next">Next element of the collection or 'null' at last element</param>
-            public Daisy(T value, Daisy<T> next = null) {
-                this.Value = value;
-                this.Next = next;
-            }
-
-            /// <summary>
-            /// Value of the collections element
-            /// </summary>
-            public readonly T Value;
-
-            /// <summary>
-            /// Next element of the collection or 'null' at last element
-            /// </summary>
-            public Daisy<T> Next;
-        }
     }
 }
