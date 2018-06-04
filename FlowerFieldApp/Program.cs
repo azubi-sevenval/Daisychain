@@ -9,24 +9,16 @@ namespace FlowerFieldApp
     class Program
     {
         static void Main(string[] args) {
-            //
-            // demonstrate the usage of IEnumerator (and IEnumerator<T>)
-            //
 
-            // array
-            int[] a = { 100, 200, 300 };
-            ShowCollection(a);
+            //int[] a = { 100, 200, 300 };
+            //ShowCollection(a);
 
-            // List<string>
-            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-            ShowCollection(b);
+            //List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            //ShowCollection(b);
 
-            //
-            // demonstrate the usage of DasyChain
-            //
-            Customer c1 = new Customer("1Hugo", "Hiller");
-            Customer c2 = new Customer("2Helga", "Hermsdorf");
-            Customer c3 = new Customer("3Holger", "Hollein");
+            Customer c1 = new Customer("Hugo", "Hiller");
+            Customer c2 = new Customer("Helga", "Hermsdorf");
+            Customer c3 = new Customer("Holger", "Hollein");
 
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
@@ -37,10 +29,7 @@ namespace FlowerFieldApp
             } catch {
                 Console.WriteLine("\nDaisychain is not successfully implemented!!!");
             }
-
-            //
-            // end of program
-            //
+            
             Console.WriteLine("\nDone.");
             Console.ReadLine();
         }
