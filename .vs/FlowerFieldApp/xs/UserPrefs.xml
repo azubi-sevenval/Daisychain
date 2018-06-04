@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{2C28A32C-FE01-49C2-9667-A759CAC6E5F8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlowerFieldApp/Daisychain.cs">
+    <Files>
+      <File FileName="FlowerFieldApp/Program.cs" Line="15" Column="4" />
+      <File FileName="FlowerFieldApp/Daisychain.cs" Line="13" Column="22" />
+      <File FileName="FlowerFieldApp/Customer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FlowerFieldApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
