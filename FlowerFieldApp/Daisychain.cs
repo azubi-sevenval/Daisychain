@@ -8,12 +8,12 @@ namespace FlowerFieldApp
 {
     public class Daisychain<T> : IEnumerable, IEnumerator
     {
-        private class Daisy<T>
+        private class Daisy<U>
         {
-            public readonly T Value;
-            public Daisy<T> Next;
+            public readonly U Value;
+            public Daisy<U> Next;
 
-            public Daisy(T value, Daisy<T> next = null)
+            public Daisy(U value, Daisy<U> next = null)
             {
                 this.Value = value;
                 this.Next = next;
@@ -31,7 +31,6 @@ namespace FlowerFieldApp
             {
                 first = daisy;
                 current = first;
-                Console.WriteLine(first.Value);
             }
             else
             {
@@ -39,7 +38,6 @@ namespace FlowerFieldApp
                 {
                     current.Next = daisy;
                     current = daisy;
-                    Console.WriteLine(current.Value);
                 }
             }
             count++;
@@ -49,49 +47,44 @@ namespace FlowerFieldApp
 
         public void Remove()
         {
-            //current = null;
-            //count--;
+            current = null;
+            count--;
+        }
+
+        public bool Contains(string str)
+        {
+
+            return true;
         }
 
         public T GetCurrent() { return (T)Current; } // type save
 
-        public object Current { get { return this.current; } }
+        public object Current { get { return this.current.Value; } }
 
-        /// <summary>
-        /// Sets the iteration to its initial position, which is just before the first element.
-        /// Implementation of IEnumerator-interface.
-        /// </summary>
         public void Reset() {
-            count = -1;
-            current = first;
+            current = null;
+            // current = first;
         }
 
-        /// <summary>
-        /// Advances the iteration to the next element of the collection starting from current.
-        /// Implementation of IEnumerator-interface.
-        /// </summary>
-        /// <returns>true if the iteration was successfully advanced to the next element;
-        /// false if the iteration has passed the end of the collection.</returns>
         public bool MoveNext()
         {
-            if (current.Next != null)
+            if(current == null)
             {
-                Console.WriteLine(current.Value);
-                current = current.Next;
+                current = first;
                 return true;
-            }
-            else
+            } else
             {
-                Console.WriteLine(current.Value);
-                return false;
+                if(current.Next != null)
+                {
+                    current = current.Next;
+                    return true;
+                } else
+                {
+                    return false;
+                }
             }
         }
 
-        /// <summary>
-        /// Returns this as enumerator.
-        /// Implementation of the IEnumerable-interface.
-        /// </summary>
-        /// <returns></returns>
         public IEnumerator GetEnumerator() { Reset(); return this; }
     }
 }

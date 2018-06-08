@@ -14,24 +14,19 @@ namespace FlowerFieldApp
             //
 
             // array
-            int[] a = { 100, 200, 300 };
-            ShowCollection(a);
-
-            // List<string>
-            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-            ShowCollection(b);
+            // int[] a = { 100, 200, 300 };
+            // ShowCollection(a);
+            //
+            // // List<string>
+            // List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            // ShowCollection(b);
 
             //
             // demonstrate the usage of DasyChain
             //
-            Customer c1 = new Customer("1Hugo", "Hiller");
-            Customer c2 = new Customer("2Helga", "Hermsdorf");
-            Customer c3 = new Customer("3Holger", "Hollein");
-<<<<<<< HEAD
-=======
-            Customer c4 = new Customer("4Hermann", "Hoffmann");
->>>>>>> 9a55b0bcb21e68c9d484e0b909880ec565aac6fb
-
+            Customer c1 = new Customer("Hugo", "Hiller");
+            Customer c2 = new Customer("Helga", "Hermsdorf");
+            Customer c3 = new Customer("Holger", "Hollein");
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
                 c.Insert(c1);
@@ -46,7 +41,7 @@ namespace FlowerFieldApp
             // end of program
             //
             Console.WriteLine("\nDone.");
-            Console.ReadLine();
+            // Console.ReadLine();
         }
 
         static void ShowCollection(System.Collections.IEnumerable a) {
