@@ -9,9 +9,17 @@ namespace FlowerFieldApp
     class Program
     {
         static void Main(string[] args) {
+            //
+            // demonstrate the usage of IEnumerator (and IEnumerator<T>)
+            //
 
-            //int[] a = { 100, 200, 300 };
-            //ShowCollection(a);
+            // array
+            // int[] a = { 100, 200, 300 };
+            // ShowCollection(a);
+            //
+            // // List<string>
+            // List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            // ShowCollection(b);
 
             //List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
             //ShowCollection(b);
@@ -21,7 +29,6 @@ namespace FlowerFieldApp
             Customer c1 = new Customer("Hugo", "Hiller");
             Customer c2 = new Customer("Helga", "Hermsdorf");
             Customer c3 = new Customer("Holger", "Hollein");
-
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
                 c.Insert(c1);
@@ -33,7 +40,7 @@ namespace FlowerFieldApp
             }
 
             Console.WriteLine("\nDone.");
-            //Console.ReadLine();
+            // Console.ReadLine();
         }
 
         static void ShowCollection(System.Collections.IEnumerable a) {

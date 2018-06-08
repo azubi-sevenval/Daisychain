@@ -12,31 +12,39 @@ namespace FlowerFieldApp {
         if (first == null) {
           first = daisy;
           current = first;
-        } else if(current == null) {
+        } else if(current.Next == null) {
           current.Next = daisy;
-          current = current.Next;
+          current = daisy;
         }
         count++;
-    }
+      }
 
-    public int Count() { return this.count; }
+    public int Count() {
+      return this.count;
+    }
 
     public void Remove() {
       current = null;
       count--;
     }
 
-    public T GetCurrent() { return (T)Current; } // type save
+    public bool Contains(string str){
+      return true;
+    }
 
-    public object Current { get { return this.current; } }
+    public T GetCurrent() { return (T)Current; }
+
+    public object Current { get { return this.current.Value; } }
 
     public void Reset() {
-      count = -1;
-      current = first;
+      current = null;
     }
 
     public bool MoveNext() {
-      if (current.Next != null) {
+      if(current == null) {
+        current = first;
+        return true;
+      } else if(current.Next != null) {
         current = current.Next;
         return true;
       } else {
