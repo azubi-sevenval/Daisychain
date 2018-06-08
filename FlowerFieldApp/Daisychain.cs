@@ -34,12 +34,12 @@ namespace FlowerFieldApp {
         public object Current => current;
 
         public void Reset() {
-            count = 0;
+            count = -1;
             current = first;
         }
 
         public bool MoveNext() {
-            if (current != null) {
+            if (current.Next != null) {
                 current = current.Next;
                 return true;
             }
@@ -49,7 +49,7 @@ namespace FlowerFieldApp {
         public IEnumerator GetEnumerator() {
             return this;
         }
-        
+
         private class Daisy<U> {
             public readonly U Value;
             public Daisy<U> Next;
