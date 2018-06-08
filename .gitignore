@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+!./FlowerFieldApp/*.cs
+!*.sln
+!*.suo

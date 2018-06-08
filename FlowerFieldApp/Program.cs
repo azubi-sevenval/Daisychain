@@ -33,7 +33,7 @@ namespace FlowerFieldApp
             }
 
             Console.WriteLine("\nDone.");
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         static void ShowCollection(System.Collections.IEnumerable a) {

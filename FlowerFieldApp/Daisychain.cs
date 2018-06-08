@@ -12,11 +12,9 @@ namespace FlowerFieldApp {
             if (first == null) {
                 first = daisy;
                 current = first;
-            } else {
-                if(current.Next == null) {
-                    current.Next = daisy;
-                    current = daisy;
-                }
+            } else if(current.Next == null) {
+                current.Next = daisy;
+                current = daisy;
             }
             count++;
         }
