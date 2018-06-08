@@ -14,16 +14,13 @@ namespace FlowerFieldApp
             //
 
             // array
-            // int[] a = { 100, 200, 300 };
-            // ShowCollection(a);
+            int[] a = { 100, 200, 300 };
+            ShowCollection(a);
             //
             // // List<string>
-            // List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-            // ShowCollection(b);
+            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            ShowCollection(b);
 
-            //List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-            //ShowCollection(b);
-            //
             // demonstrate the usage of DasyChain
             //
             Customer c1 = new Customer("Hugo", "Hiller");

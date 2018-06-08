@@ -14,7 +14,7 @@ namespace FlowerFieldApp {
           current = first;
         } else if(current.Next == null) {
           current.Next = daisy;
-          current = daisy;
+          current = current.Next;
         }
         count++;
       }
