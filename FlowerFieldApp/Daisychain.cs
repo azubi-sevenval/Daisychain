@@ -89,10 +89,6 @@ namespace FlowerFieldApp
                     return false;
                 }
             }
-            //Console.WriteLine(current.Value);
-            //if (current.Next != null)
-            //{
-            //}
         }
 
         public IEnumerator GetEnumerator() { Reset(); return this; }
