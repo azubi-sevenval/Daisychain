@@ -14,23 +14,30 @@ namespace FlowerFieldApp
             //
 
             // array
-            int[] a = { 100, 200, 300 };
-            ShowCollection(a);
+            // int[] a = { 100, 200, 300 };
+            // ShowCollection(a);
             //
             // // List<string>
-            List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
-            ShowCollection(b);
+            // List<string> b = new List<string>(new string[] { "Hugo", "Helga", "Holger" });
+            // ShowCollection(b);
 
             // demonstrate the usage of DasyChain
             //
             Customer c1 = new Customer("Hugo", "Hiller");
             Customer c2 = new Customer("Helga", "Hermsdorf");
             Customer c3 = new Customer("Holger", "Hollein");
+            Customer c4 = new Customer("Hermann", "Hoffmann");
+            Customer c5 = new Customer("Heinz", "Wurst");
+            Customer c6 = new Customer("Hans", "Vader");
+
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();
                 c.Insert(c1);
                 c.Insert(c2);
                 c.Insert(c3);
+                c.Insert(c4);
+                c.Insert(c5);
+                c.Insert(c6);
                 ShowCollection(c);
             } catch {
                 Console.WriteLine("\nDaisychain is not successfully implemented!!!");
@@ -41,14 +48,14 @@ namespace FlowerFieldApp
         }
 
         static void ShowCollection(System.Collections.IEnumerable a) {
-            Console.WriteLine("\n*** explicit enumerator");
+            // Console.WriteLine("\n*** explicit enumerator");
             System.Collections.IEnumerator ea = a.GetEnumerator();
             ea.Reset();
             while (ea.MoveNext()) {
                 Console.WriteLine(ea.Current);
             }
-            Console.WriteLine("\n*** foreach");
-            foreach (object i in a) Console.WriteLine(i);
+            // Console.WriteLine("\n*** foreach");
+            // foreach (object i in a) Console.WriteLine(i);
         }
     }
 }

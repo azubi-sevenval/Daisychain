@@ -20,12 +20,11 @@ namespace FlowerFieldApp {
       }
 
     public int Count() {
-      return this.count;
+      return count;
     }
 
     public void Remove() {
-      current = null;
-      count--;
+
     }
 
     public bool Contains(string str){
@@ -57,10 +56,12 @@ namespace FlowerFieldApp {
     private class Daisy<U> {
       public readonly U Value;
       public Daisy<U> Next;
+      public Daisy<U> Previous;
 
-      public Daisy(U value, Daisy<U> next = null) {
+      public Daisy(U value, Daisy<U> next = null, Daisy<U> previous = null) {
         this.Value = value;
         this.Next = next;
+        this.Previous = previous;
       }
     }
   }
