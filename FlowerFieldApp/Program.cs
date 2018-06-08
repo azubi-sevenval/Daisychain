@@ -27,6 +27,10 @@ namespace FlowerFieldApp
             Customer c1 = new Customer("1Hugo", "Hiller");
             Customer c2 = new Customer("2Helga", "Hermsdorf");
             Customer c3 = new Customer("3Holger", "Hollein");
+<<<<<<< HEAD
+=======
+            Customer c4 = new Customer("4Hermann", "Hoffmann");
+>>>>>>> 9a55b0bcb21e68c9d484e0b909880ec565aac6fb
 
             try {
                 Daisychain<Customer> c = new Daisychain<Customer>();

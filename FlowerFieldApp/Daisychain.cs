@@ -24,7 +24,6 @@ namespace FlowerFieldApp
         private Daisy<T> current = null;
         public int count;
 
-        // Methodendeklaration
         public void Insert(T value)
         {
             Daisy<T> daisy = new Daisy<T>(value);
@@ -48,32 +47,24 @@ namespace FlowerFieldApp
 
         public int Count() { return this.count; }
 
-        // <summary>
-        // Removes the current element of the collection and makes the next element the current element if available.
-        // </summary>
         public void Remove()
         {
-            // current = null;
-            // count--
+            //current = null;
+            //count--;
         }
 
-        /// <summary>
-        /// Gets the value of the element in the collection at the current position of the iteration.
-        /// </summary>
-        /// <returns></returns>
         public T GetCurrent() { return (T)Current; } // type save
 
-        /// <summary>
-        /// Gets the value of the element in the collection at the current position of the iteration.
-        /// Implementation of IEnumerator-interface.
-        /// </summary>
         public object Current { get { return this.current; } }
 
         /// <summary>
         /// Sets the iteration to its initial position, which is just before the first element.
         /// Implementation of IEnumerator-interface.
         /// </summary>
-        public void Reset() { throw new NotImplementedException("please implement missing code here"); }
+        public void Reset() {
+            count = -1;
+            current = first;
+        }
 
         /// <summary>
         /// Advances the iteration to the next element of the collection starting from current.
@@ -83,8 +74,19 @@ namespace FlowerFieldApp
         /// false if the iteration has passed the end of the collection.</returns>
         public bool MoveNext()
         {
-            return current != null ? true : false;
+            if (current.Next != null)
+            {
+                Console.WriteLine(current.Value);
+                current = current.Next;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(current.Value);
+                return false;
+            }
         }
+
         /// <summary>
         /// Returns this as enumerator.
         /// Implementation of the IEnumerable-interface.
